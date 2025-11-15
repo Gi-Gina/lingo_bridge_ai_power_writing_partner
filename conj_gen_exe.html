@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Conjunction Exercises</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+.lesson-card {
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    background-color: white;
+}
+
+.section-card {
+    border-left: 6px solid;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.section-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.input-answer, .input-text-full {
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 0.25rem 0.5rem;
+    text-align: center;
+}
+
+.input-text-full {
+    width: 100%;
+    margin-top: 0.25rem;
+}
+
+.btn-check {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-check:hover {
+    background-color: #2563eb;
+}
+
+.feedback {
+    font-weight: 600;
+    margin-top: 0.5rem;
+    padding: 0.25rem 0;
+}
+
+.correct { color: #10b981; }
+.incorrect { color: #ef4444; }
+
+</style>
+</head>
+<body class="p-4 sm:p-8">
+
+<div class="max-w-4xl mx-auto rounded-2xl lesson-card p-6 md:p-12">
+
+<header class="text-center mb-12">
+<h1 class="text-5xl font-extrabold text-blue-900 mb-3 tracking-tight">
+General Conjunction Exercises
+</h1>
+<p class="text-xl text-gray-500 font-light">
+Interactive exercises: Coordinating, Subordinating, and Correlative Conjunctions.
+</p>
+</header>
+
+<div class="space-y-16">
+
+
+<!-- ⭐ SECTION 1: FIXED — ONE FEEDBACK PER SENTENCE -->
+<section class="section-card border-l-blue-500 bg-white p-6">
+<h2 class="text-2xl font-bold mb-6 text-blue-700 flex items-center">
+<span class="mr-3 text-2xl">📝</span> Fill in the Blank
+</h2>
+
+<ul class="space-y-6">
+
+<li>
+1. I wanted to join the party,
+<input class="input-answer" id="q1">
+it was too tired,
+<input class="input-answer" id="q2">
+ I stayed home.
+<div class="feedback" id="f1"></div>
+</li>
+
+<li>
+2. She didn’t study much,
+<input class="input-answer" id="q3">
+she passed the test,
+<input class="input-answer" id="q4">
+she is proud.
+<div class="feedback" id="f2"></div>
+</li>
+
+<li>
+3.
+<input class="input-answer" id="q5">
+he tried his best, he couldn’t finish on time.
+<div class="feedback" id="f3"></div>
+</li>
+
+<li>
+4. You can have
+<input class="input-answer" id="q6">
+coffee
+<input class="input-answer" id="q7">
+tea during the break.
+<div class="feedback" id="f4"></div>
+</li>
+
+<li>
+5. The weather was terrible,
+<input class="input-answer" id="q8">
+we decided to go for a hike
+<input class="input-answer" id="q9">
+we needed the exercise.
+<div class="feedback" id="f5"></div>
+</li>
+
+</ul>
+
+<button class="btn-check mt-4" onclick="checkSection1()">Check Answers</button>
+</section>
+
+
+
+<!-- SECTION 2 -->
+<section class="section-card border-l-green-500 bg-white p-6">
+<h2 class="text-2xl font-bold mb-6 text-green-700 flex items-center">
+<span class="mr-3 text-2xl">✏️</span> Sentence Combining
+</h2>
+
+<ul class="space-y-4">
+
+<li>
+1. I enjoy reading novels. I also like watching movies. I avoid horror films.<br>
+<input class="input-text-full" id="c1">
+<div class="feedback" id="fc1"></div>
+</li>
+
+<li>
+2. She worked hard for the exam. She didn’t understand everything. She still passed.<br>
+<input class="input-text-full" id="c2">
+<div class="feedback" id="fc2"></div>
+</li>
+
+<li>
+3. He is wealthy. He is unhappy. He wants to travel more.<br>
+<input class="input-text-full" id="c3">
+<div class="feedback" id="fc3"></div>
+</li>
+
+</ul>
+
+<button class="btn-check mt-4" onclick="checkCombining()">Check Answers</button>
+</section>
+
+
+
+<!-- SECTION 3 -->
+<section class="section-card border-l-red-500 bg-white p-6">
+<h2 class="text-2xl font-bold mb-6 text-red-700 flex items-center">
+<span class="mr-3 text-2xl">❌</span> Correct the Mistakes
+</h2>
+
+<ul class="space-y-4">
+
+<li>
+1. Because he was tired, but he continued working.<br>
+<input class="input-text-full" id="m1">
+<div class="feedback" id="fm1"></div>
+</li>
+
+<li>
+2. I like coffee, but and tea.<br>
+<input class="input-text-full" id="m2">
+<div class="feedback" id="fm2"></div>
+</li>
+
+<li>
+3. Although he was late, so he missed the bus.<br>
+<input class="input-text-full" id="m3">
+<div class="feedback" id="fm3"></div>
+</li>
+
+</ul>
+
+<button class="btn-check mt-4" onclick="checkMistakes()">Check Answers</button>
+</section>
+
+
+
+<!-- ⭐ SECTION 4: FIXED — ONE FEEDBACK PER SENTENCE -->
+<section class="section-card border-l-purple-500 bg-white p-6">
+<h2 class="text-2xl font-bold mb-6 text-purple-700 flex items-center">
+<span class="mr-3 text-2xl">🔗</span> Correlative Conjunctions
+</h2>
+
+<ul class="space-y-6">
+
+<li>
+1.
+<input class="input-answer" id="cc1">
+my brother
+<input class="input-answer" id="cc2">
+my sister enjoy hiking.
+<div class="feedback" id="fcc1"></div>
+</li>
+
+<li>
+2. You can take
+<input class="input-answer" id="cc3">
+the bus
+<input class="input-answer" id="cc4">
+the train to reach the city.
+<div class="feedback" id="fcc2"></div>
+</li>
+
+<li>
+3. She is
+<input class="input-answer" id="cc5">
+talented
+<input class="input-answer" id="cc6">
+hardworking.
+<div class="feedback" id="fcc3"></div>
+</li>
+
+</ul>
+
+<button class="btn-check mt-4" onclick="checkCorrelative()">Check Answers</button>
+</section>
+
+</div>
+
+<footer class="mt-16 pt-8 border-t border-gray-100 text-center text-base text-gray-400">
+Happy learning! | General Conjunction Exercises
+</footer>
+</div>
+
+
+
+
+<!-- ===================== JAVASCRIPT ===================== -->
+
+<script>
+// ⭐ SECTION 1
+const answersSection1 = {
+    q1:'but', q2:'so',
+    q3:'yet', q4:'and',
+    q5:'Although',
+    q6:'either', q7:'or',
+    q8:'yet', q9:'because'
+};
+
+const groupSection1 = {
+    f1: ['q1','q2'],
+    f2: ['q3','q4'],
+    f3: ['q5'],
+    f4: ['q6','q7'],
+    f5: ['q8','q9']
+};
+
+function checkSection1(){
+    for (let fb in groupSection1){
+        let inputs = groupSection1[fb];
+        let html = "";
+        let allCorrect = true;
+
+        inputs.forEach(id => {
+            const el = document.getElementById(id);
+            const user = el.value.trim().toLowerCase();
+            const correct = answersSection1[id].toLowerCase();
+
+            if(user === correct){
+                el.style.borderColor = "#10b981";
+                html += `✅ ${id}: ${answersSection1[id]}<br>`;
+            } else {
+                el.style.borderColor = "#ef4444";
+                allCorrect = false;
+                html += `❌ ${id}: ${answersSection1[id]}<br>`;
+            }
+        });
+
+        const box = document.getElementById(fb);
+        box.innerHTML = html;
+        box.className = "feedback " + (allCorrect ? "correct" : "incorrect");
+    }
+}
+
+
+
+// ⭐ SECTION 2
+const answersCombining = {
+    c1:"I enjoy reading novels and watching movies, but I avoid horror films.",
+    c2:"She worked hard for the exam, and although she didn’t understand everything, she still passed.",
+    c3:"He is wealthy but unhappy, and he wants to travel more."
+};
+
+function checkCombining(){
+    for(let key in answersCombining){
+        const input=document.getElementById(key);
+        const fb=document.getElementById('fc'+key.slice(1));
+        if(input.value.trim()===answersCombining[key]){
+            input.style.borderColor="#10b981";
+            fb.textContent="✅ Correct! Answer: "+answersCombining[key];
+            fb.className="feedback correct";
+        } else{
+            input.style.borderColor="#ef4444";
+            fb.textContent="❌ Incorrect. Answer: "+answersCombining[key];
+            fb.className="feedback incorrect";
+        }
+    }
+}
+
+
+
+// ⭐ SECTION 3
+const answersMistakes={
+    m1:"Although he was tired, he continued working.",
+    m2:"I like coffee and tea.",
+    m3:"Because he was late, he missed the bus."
+};
+
+function checkMistakes(){
+    for(let key in answersMistakes){
+        const input=document.getElementById(key);
+        const fb=document.getElementById('fm'+key.slice(1));
+        if(input.value.trim()===answersMistakes[key]){
+            input.style.borderColor="#10b981";
+            fb.textContent="✅ Correct! "+answersMistakes[key];
+            fb.className="feedback correct";
+        } else{
+            input.style.borderColor="#ef4444";
+            fb.textContent="❌ Incorrect. Answer: "+answersMistakes[key];
+            fb.className="feedback incorrect";
+        }
+    }
+}
+
+
+
+// ⭐ SECTION 4 — FIXED
+const answersCorrelative = {
+    cc1:'Both', cc2:'and',
+    cc3:'either', cc4:'or',
+    cc5:'not only', cc6:'but also'
+};
+
+const groupSection4 = {
+    fcc1: ['cc1','cc2'],
+    fcc2: ['cc3','cc4'],
+    fcc3: ['cc5','cc6']
+};
+
+function checkCorrelative(){
+    for (let fb in groupSection4){
+        let inputs = groupSection4[fb];
+        let html = "";
+        let allCorrect = true;
+
+        inputs.forEach(id => {
+            const el = document.getElementById(id);
+            const user = el.value.trim().toLowerCase();
+            const correct = answersCorrelative[id].toLowerCase();
+
+            if(user === correct){
+                el.style.borderColor="#10b981";
+                html += `✅ ${id}: ${answersCorrelative[id]}<br>`;
+            } else{
+                el.style.borderColor="#ef4444";
+                allCorrect=false;
+                html += `❌ ${id}: ${answersCorrelative[id]}<br>`;
+            }
+        });
+
+        const box=document.getElementById(fb);
+        box.innerHTML = html;
+        box.className = "feedback " + (allCorrect ? "correct" : "incorrect");
+    }
+}
+</script>
+
+</body>
+</html>
